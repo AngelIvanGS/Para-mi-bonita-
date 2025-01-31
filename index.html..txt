@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Valentine's Invitation</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background-color: #fdf0f5;
+      font-family: 'Arial', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      color: #4e003d;
+      overflow-x: hidden;
+    }
+    .container {
+      text-align: center;
+      background: white;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      max-width: 600px;
+      position: relative;
+      overflow: hidden;
+    }
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+    }
+    p {
+      font-size: 1.2em;
+      margin-bottom: 20px;
+    }
+    button {
+      background-color: #e63973;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 10px;
+      font-size: 1em;
+      cursor: pointer;
+      margin: 5px;
+    }
+    button:hover {
+      background-color: #c2285c;
+    }
+    .response-section, .final-section {
+      display: none;
+      margin-top: 20px;
+    }
+    textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      border: 2px solid #e63973;
+      border-radius: 10px;
+      resize: none;
+    }
+    .collage {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 20px;
+    }
+    .collage img {
+      width: 100px;
+      height: 100px;
+      border-radius: 10px;
+      object-fit: cover;
+    }
+    /* Animations */
+    .flower {
+      position: absolute;
+      animation: float 10s linear infinite;
+      pointer-events: none;
+      width: 50px;
+      height: 50px;
+    }
+
+    .flower img {
+      width: 100%;
+      height: auto;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Bienvenida, mi bonita</h1>
+    <p id="welcome-text">El 14 de febrero tiene mil significados, pero para mí, este año, solo tiene uno: tú. No hay regalo más grande que compartir ese día contigo, porque eres quien hace especial cada momento de mi vida. Así que, quiero preguntarte, ¿me darías el privilegio de ser tu Valentín y pasar juntos un día lleno de amor, risas y todo lo que hace nuestro tiempo tan único? Porque contigo, cualquier día se convierte en el mejor.</p>
+    <button onclick="showOptions()">Entrar</button>
+
+    <div class="response-section">
+      <p>¿Te gustaría aceptar esta invitación especial?</p>
+      <button onclick="acceptInvitation()">Sí</button>
+      <button onclick="declineInvitation()">No</button>
+      <button onclick="otherResponse()">Otra Respuesta</button>
+
+      <div id="other-input" style="display:none;">
+        <textarea rows="3" placeholder="Escribe aquí tu respuesta..."></textarea>
+      </div>
+    </div>
+
+    <div class="final-section">
+      <p></p>
+      <div id="accept-message" style="display:none;">
+        <p>¡Gracias por aceptar! Este día será inolvidable. Por favor, escribe algo bonito:</p>
+        <textarea id="custom-message" rows="3" placeholder="Escribe tu mensaje aquí..."></textarea>
+        <button onclick="showLoveMessage()">Enviar</button>
+      </div>
+      <div id="love-message" style="display:none; margin-top: 20px;">
+        <p>Te amo.<br>Quiero y deseo no solo pasar ese día contigo, sino una vida entera a tu lado, y solo a tu lado.<br>Te amo, mi bonita. Eres y siempre serás el amor de mi alma.</p>
+      </div>
+      <div class="collage">
+        <img src="https://i.imgur.com/JjaMkwM.jpg" alt="Imagen 1">
+        <img src="https://i.imgur.com/FNXcVYA.jpg" alt="Imagen 2">
+        <img src="https://i.imgur.com/E3OitkC.jpg" alt="Imagen 3">
+        <img src="https://i.imgur.com/9jPdpGa.jpg" alt="Imagen 4">
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function showOptions() {
+      document.getElementById('welcome-text').style.display = 'none';
+      document.querySelector('.response-section').style.display = 'block';
+    }
+
+    function acceptInvitation() {
+      document.querySelector('.response-section').style.display = 'none';
+      document.querySelector('.final-section').style.display = 'block';
+      document.getElementById('accept-message').style.display = 'block';
+    }
+
+    function showLoveMessage() {
+      document.getElementById('accept-message').style.display = 'none';
+      document.getElementById('love-message').style.display = 'block';
+    }
+  </script>
+</body>
+</html>
