@@ -1,6 +1,5 @@
 git clone https://github.com/TU_USUARIO/TU_REPOSITORIO.git
-cd TU_REPOSITORIO
-<!DOCTYPE html>
+cd TU_REPOSITORIO<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -158,7 +157,6 @@ cd TU_REPOSITORIO
     }
   </script>
 </body>
-</html>
-git add .
+</html> git add .
 git commit -m "Subiendo mi invitación de San Valentín"
 git push origin main
